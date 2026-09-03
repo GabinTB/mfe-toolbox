@@ -1,8 +1,9 @@
 name: Publish to PyPI
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -26,7 +27,6 @@ jobs:
   publish-testpypi:
     needs: build
     runs-on: ubuntu-latest
-    environment: testpypi
     permissions:
       id-token: write
     steps:
@@ -42,7 +42,6 @@ jobs:
   publish-pypi:
     needs: publish-testpypi
     runs-on: ubuntu-latest
-    environment: pypi
     permissions:
       id-token: write
     steps:
