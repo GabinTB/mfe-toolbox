@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Cython compiled files
+*.c
+*.cpp
+*.so
+*.pyd
+*.html          # Cython annotation files (from annotate=True)
+
+# Cython build artifacts
+src/mfe/realized/_core.cpython-*.so
+src/mfe/multivariate/_core.cpython-*.so
+
+# setuptools build directories
+build/
+lib.*/
+temp.*/
+
+# pytest
+.pytest_cache/
+.cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# ruff
+.ruff_cache/
+
+# MkDocs
+site/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Profiling
+*.prof
+*.lprof
+
+# Local dev
+.env
+*.local
