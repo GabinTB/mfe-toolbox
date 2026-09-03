@@ -55,3 +55,10 @@ ignore_missing_imports = true
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-v --tb=short"
+
+[project.urls]
+Homepage = "https://gabintb.github.io/mfe-toolbox/"
+Documentation = "https://gabintb.github.io/mfe-toolbox/"
+Repository = "https://github.com/GabinTB/mfe-toolbox"
+"Bug Tracker" = "https://github.com/GabinTB/mfe-toolbox/issues"
+Changelog = "https://gabintb.github.io/mfe-toolbox/changelog/"

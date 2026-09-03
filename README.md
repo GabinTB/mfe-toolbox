@@ -1,7 +1,28 @@
 # mfe — Financial Econometrics for Python
 
+[![PyPI version](https://img.shields.io/pypi/v/mfe-toolbox.svg)](https://pypi.org/project/mfe-toolbox/)
+[![Python](https://img.shields.io/pypi/pyversions/mfe-toolbox.svg)](https://pypi.org/project/mfe-toolbox/)
+[![Downloads](https://static.pepy.tech/badge/mfe-toolbox)](https://pepy.tech/project/mfe-toolbox)
+[![Downloads/month](https://static.pepy.tech/badge/mfe-toolbox/month)](https://pepy.tech/project/mfe-toolbox)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docs](https://img.shields.io/badge/docs-github.io-blue)](https://gabintb.github.io/mfe-toolbox/)
+
 Python port of Kevin Sheppard's Oxford MFE Toolbox, optimised for HFT data.
 Complements [`arch`](https://arch.readthedocs.io) — covering everything `arch` is missing.
+
+> **Upstream**: ported from [`bashtage/mfe-toolbox`](https://github.com/bashtage/mfe-toolbox) —
+> see the [project homepage](https://www.kevinsheppard.com/code/matlab/mfe-toolbox/) and
+> [MATLAB Central entry](https://ch.mathworks.com/matlabcentral/fileexchange/170381-mfe-toolbox-kevin-sheppard)
+> for the original MATLAB implementation by Kevin Sheppard (Oxford MFE).
+
+## Documentation
+
+Full documentation at **[gabintb.github.io/mfe-toolbox](https://gabintb.github.io/mfe-toolbox/)**, including:
+
+- [Installation & Cython build](https://gabintb.github.io/mfe-toolbox/guide/installation/)
+- [Quick start](https://gabintb.github.io/mfe-toolbox/guide/quickstart/)
+- [mfe vs. arch vs. statsmodels](https://gabintb.github.io/mfe-toolbox/guide/comparison/)
+- [API reference](https://gabintb.github.io/mfe-toolbox/api/realized/)
 
 ## What's inside
 
@@ -19,7 +40,7 @@ Complements [`arch`](https://arch.readthedocs.io) — covering everything `arch`
 ## Installation
 
 ```bash
-pip install mfe
+pip install mfe-toolbox
 ```
 
 ## Cython extensions (optional, recommended for production)
@@ -28,8 +49,7 @@ Cython compilation gives 10–800× speedups on hot paths (realized kernel inner
 loop, Hayashi-Yoshida sweep, DCC/BEKK recursions):
 
 ```bash
-pip install cython numpy setuptools
-python setup_cython.py build_ext --inplace
+uv run python setup_cython.py build_ext --inplace
 ```
 
 ## Quick start
@@ -55,6 +75,14 @@ from mfe.univariate import HEAVY
 heavy = HEAVY().fit(daily_returns, realized_variances)
 ```
 
+## Upstream
+
+This package ports the [Oxford MFE Toolbox](https://github.com/bashtage/mfe-toolbox)
+by Kevin Sheppard to Python, fixing several bugs present in the MATLAB source
+(memory leaks, silent non-convergence, O(N²) algorithms replaced with
+O(N log N) Cython implementations). See [`UPSTREAM.md`](UPSTREAM.md) for the
+full list of files reviewed, intentional corrections, and deferred items.
+
 ## Development
 
 ```bash
@@ -63,8 +91,6 @@ PYTHONPATH=src pytest tests/     # 246 tests
 mkdocs serve                     # documentation
 ```
 
-## Relationship to MATLAB MFE Toolbox
+## License
 
-This package ports [bashtage/mfe-toolbox](https://github.com/bashtage/mfe-toolbox)
-to Python, fixing several bugs present in the MATLAB source (memory leaks, silent
-non-convergence, O(N²) algorithms replaced with O(N log N) Cython implementations).
+MIT
