@@ -1,6 +1,6 @@
 [project]
 name = "mfe-toolbox"
-version = "0.1.0"
+version = "0.1.2"
 description = "Python port of the MFE Toolbox — financial econometrics for HFT data"
 readme = "README.md"
 license = "MIT"
